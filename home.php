@@ -39,11 +39,11 @@
 
         <?php endwhile; else: ?>
 
-                <div class="page-header">
-                        <h1>Hmm.</h1>
-                </div>
+        <div class="page-header">
+            <h1 class="page-title"><?php _e( 'Oh no!', 'zen-life-free' ); ?></h1>
+        </div>
 
-                <p>Nothing was found for that search term.</p>
+        <p><?php _e( 'No content is appearing for this page!', 'zen-life-free' ); ?></p>
          
          <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>></div> 
 

@@ -44,7 +44,7 @@
 
   <div class="footer-strip">
     <div class="page-container">
-      <span id="copyright">&copy; <?php echo date ('Y') ?> <?php bloginfo('name'); ?> &nbsp; &bull; &nbsp; Zen Life Theme by <a href="http://www.zenwebthemes.com/">ZenWebThemes.com</a></span>
+      <span id="copyright">&copy; <?php echo date ('Y') ?> <?php bloginfo('name'); ?> &nbsp; &bull; &nbsp; Zen Life Theme by <a href="https://www.zenwebthemes.com/">ZenWebThemes.com</a></span>
     </div>
   </div>
 

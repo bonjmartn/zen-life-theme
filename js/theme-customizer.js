@@ -1,19 +1,14 @@
 (function( $ ) {
 
-    wp.customize( 'zenlifefree_logo', function( value ) {
+    wp.customize( 'zenlife_logo', function( value ) {
         value.bind( function( to ) {
-            if( to == '' ) {
-                $(' #logo ').hide();
-            } else {
-                $(' #logo ').show();
-                $(' #logo ').attr( 'src', to );
-            }
+            $(' .logo img ').attr( 'src', to );
         } );
     });    
 
-    wp.customize( 'zenlifefree_lg_photo', function( value ) {
+    wp.customize( 'zenlife_lg_photo', function( value ) {
         value.bind( function( to ) {
-            $( '.lg-homepage-photo' ).css( 'background-image: url', to );
+            $( '.lg-homepage-photo img' ).attr( 'src', to );
         } );
     });
 
