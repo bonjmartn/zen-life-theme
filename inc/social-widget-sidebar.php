@@ -1,25 +1,25 @@
 <?php 
 
 // register social widget
-function register_social_widget_footer() {
-    register_widget( 'social_widget_footer' );
+function register_social_widget_sidebar() {
+    register_widget( 'social_widget_sidebar' );
 }
-add_action( 'widgets_init', 'register_social_widget_footer' );
+add_action( 'widgets_init', 'register_social_widget_sidebar' );
 
 
 /**
- * Adds social_widget_footer widget.
+ * Adds social_widget_sidebar widget.
  */
-class social_widget_footer extends WP_Widget {
+class social_widget_sidebar extends WP_Widget {
 
   /**
    * Register widget with WordPress.
    */
   function __construct() {
     parent::__construct(
-      'social_widget_footer', // Base ID
-      __( 'Social Icons Footer', 'zen-life' ), // Name
-      array( 'description' => __( 'Social Icons for the Footer', 'zen-life' ), ) // Args
+      'social_widget_sidebar', // Base ID
+      __( 'Social Icons Sidebar', 'zen-life' ), // Name
+      array( 'description' => __( 'Social Icons for the sidebar', 'zen-life' ), ) // Args
     );
   }
 
@@ -46,37 +46,41 @@ class social_widget_footer extends WP_Widget {
     $youtube = esc_url( $instance['youtube'] );
     $linkedin = esc_url( $instance['linkedin'] );
 
+    echo sprintf( '<div class="social-sidebar-widget">');
+
     if ( ! empty( $instance['facebook'] ) ) {
-      echo sprintf( '<a href="' . $facebook . '"><i class="fa fa-facebook-square"></i></a> <a href="' . $facebook . '">Facebook</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $facebook . '"><i class="fa fa-facebook-square"></i></a> <a href="' . $facebook . '">Facebook</a><br />');
     }
 
     if ( ! empty( $instance['twitter'] ) ) {
-      echo sprintf( '<a href="' . $twitter . '"><i class="fa fa-twitter-square"></i></a> <a href="' . $twitter . '">Twitter</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $twitter . '"><i class="fa fa-twitter-square"></i></a> <a href="' . $twitter . '">Twitter</a><br />');
     }
 
     if ( ! empty( $instance['pinterest'] ) ) {
-      echo sprintf( '<a href="' . $pinterest . '"><i class="fa fa-pinterest-square"></i></a> <a href="' . $pinterest . '">Pinterest</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $pinterest . '"><i class="fa fa-pinterest-square"></i></a> <a href="' . $pinterest . '">Pinterest</a><br />');
     }
 
     if ( ! empty( $instance['instagram'] ) ) {
-      echo sprintf( '<a href="' . $instagram . '"><i class="fa fa-instagram"></i></a> <a href="' . $instagram . '">Instagram</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $instagram . '"><i class="fa fa-instagram"></i></a> <a href="' . $instagram . '">Instagram</a><br />');
     }
 
     if ( ! empty( $instance['googleplus'] ) ) {
-      echo sprintf( '<a href="' . $googleplus . '"><i class="fa fa-google-plus-square"></i></a> <a href="' . $googleplus . '">Google+</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $googleplus . '"><i class="fa fa-google-plus-square"></i></a> <a href="' . $googleplus . '">Google+</a><br />');
     }
 
     if ( ! empty( $instance['yelp'] ) ) {
-      echo sprintf( '<a href="' . $yelp . '"><i class="fa fa-yelp"></i></a> <a href="' . $yelp . '">Yelp</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $yelp . '"><i class="fa fa-yelp"></i></a> <a href="' . $yelp . '">Yelp</a><br />');
     }
 
     if ( ! empty( $instance['youtube'] ) ) {
-      echo sprintf( '<a href="' . $youtube . '"><i class="fa fa-youtube-square"></i></a> <a href="' . $youtube . '">YouTube</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+      echo sprintf( '<a href="' . $youtube . '"><i class="fa fa-youtube-square"></i></a> <a href="' . $youtube . '">YouTube</a><br />');
     }
 
     if ( ! empty( $instance['linkedin'] ) ) {
       echo sprintf( '<a href="' . $linkedin . '"><i class="fa fa-linkedin-square"></i></a> <a href="' . $linkedin . '">LinkedIn</a>');
     }
+
+    echo sprintf( '</div>');
 
     echo $args['after_widget'];
   }
@@ -100,6 +104,12 @@ class social_widget_footer extends WP_Widget {
     $linkedin = ! empty( $instance['linkedin'] ) ? $instance['linkedin'] : __( '', 'zen-life' );
     ?>
 
+
+    <p>
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Follow Us', 'zen-life' ); ?></label> 
+    <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" 
+    value="<?php echo esc_attr( $title ); ?>">
+    </p>
 
     <p>
     <label for="<?php echo $this->get_field_id('facebook_field'); ?>"><?php _e('Enter the URL for your Facebook page', 'zen-life'); ?></label>
@@ -176,6 +186,6 @@ class social_widget_footer extends WP_Widget {
     return $instance;
   }
 
-} // class social_widget_footer
+} // class social_widget_sidebar
 
 ?>

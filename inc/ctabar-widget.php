@@ -18,8 +18,8 @@ class ctabar_Widget extends WP_Widget {
   function __construct() {
     parent::__construct(
       'ctabar_widget', // Base ID
-      __( 'Call to Action Bar', 'zen-life-free' ), // Name
-      array( 'description' => __( 'Drag me to the Footer Call to Action Bar widget area', 'zen-life-free' ), ) // Args
+      __( 'Call to Action Bar', 'zen-life' ), // Name
+      array( 'description' => __( 'Drag me to the Footer Call to Action Bar widget area', 'zen-life' ), ) // Args
     );
   }
 
@@ -55,26 +55,26 @@ class ctabar_Widget extends WP_Widget {
    * @param array $instance Previously saved values from database.
    */
   public function form( $instance ) {
-    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Your Call to Action', 'zen-life-free' );
-    $text = ! empty( $instance['text'] ) ? $instance['text'] : __( 'Button Text', 'zen-life-free' );
-    $link = ! empty( $instance['link'] ) ? $instance['link'] : __( 'Button Link', 'zen-life-free' );
+    $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Your Call to Action', 'zen-life' );
+    $text = ! empty( $instance['text'] ) ? $instance['text'] : __( 'Button Text', 'zen-life' );
+    $link = ! empty( $instance['link'] ) ? $instance['link'] : __( 'Button Link', 'zen-life' );
     ?>
 
 
     <p>
-    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'zen-life-free' ); ?></label> 
+    <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'zen-life' ); ?></label> 
     <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" 
     value="<?php echo esc_attr( $title ); ?>">
     </p>
 
     <p>
-    <label for="<?php echo $this->get_field_id('text_field'); ?>"><?php _e('Enter the text for the button', 'zen-life-free'); ?></label>
+    <label for="<?php echo $this->get_field_id('text_field'); ?>"><?php _e('Enter the text for the button', 'zen-life'); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id('text_field'); ?>" name="<?php echo $this->get_field_name('text_field'); ?>" type="text" 
     value="<?php echo esc_attr( $text ); ?>" />
     </p>
 
     <p>
-    <label for="<?php echo $this->get_field_id('link_field'); ?>"><?php _e('Enter the URL for the button', 'zen-life-free'); ?></label>
+    <label for="<?php echo $this->get_field_id('link_field'); ?>"><?php _e('Enter the URL for the button', 'zen-life'); ?></label>
     <input class="widefat" id="<?php echo $this->get_field_id('link_field'); ?>" name="<?php echo $this->get_field_name('link_field'); ?>" type="text" 
     value="<?php echo esc_attr( $link ); ?>" />
     </p>
