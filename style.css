@@ -1,14 +1,14 @@
 /*
-Theme Name: Zen Life Free
+Theme Name: Zen Life
 Theme URI: https://www.zenwebthemes.com/shop-themes/zen-life/
 Author: Bonnie Martin
 Author URI: https://www.zenwebthemes.com
-Description: Zen Life is a theme with a minimal design and fun features for your blog, personal site, or project. This is the free version.
+Description: Zen Life is a theme with a minimal design and fun features for your blog, personal site, or project.
 Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, theme-options, blog
-Text Domain: zen-life-free
+Tags: two-columns, left-sidebar, right-sidebar, full-width-template, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, theme-options, blog
+Text Domain: zen-life
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1150,7 +1150,7 @@ p.nocomments { /* Message displayed when there are no comments */
 	margin: 0 10px 10px 0;
 }
 
-.aboutbox img {
+.aboutbox .widget img {
 	margin-bottom: 20px;
 }
 

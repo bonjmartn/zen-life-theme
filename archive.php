@@ -34,10 +34,10 @@
         <?php endwhile; else: ?>
 
         <div class="page-header">
-            <h1 class="page-title"><?php _e( 'Oh no!', 'zen-life-free' ); ?></h1>
+            <h1 class="page-title"><?php _e( 'Oh no!', 'zen-life' ); ?></h1>
         </div>
 
-        <p><?php _e( 'No content is appearing for this page!', 'zen-life-free' ); ?></p>
+        <p><?php _e( 'No content is appearing for this page!', 'zen-life' ); ?></p>
 
         <?php endif; ?>
 

@@ -28,14 +28,14 @@
 
       <?php
         $defaults = array(
-          'before'           => '<p>' . __( 'Pages:', 'zen-life-free' ),
+          'before'           => '<p>' . __( 'Pages:', 'zen-life' ),
           'after'            => '</p>',
           'link_before'      => '',
           'link_after'       => '',
           'next_or_number'   => 'number',
           'separator'        => ' ',
-          'nextpagelink'     => __( 'Next page', 'zen-life-free' ),
-          'previouspagelink' => __( 'Previous page', 'zen-life-free' ),
+          'nextpagelink'     => __( 'Next page', 'zen-life' ),
+          'previouspagelink' => __( 'Previous page', 'zen-life' ),
           'pagelink'         => '%',
           'echo'             => 1
         );
@@ -51,7 +51,12 @@
       </em></p>
 
       <hr>
-  
+
+      <?php if ( ! dynamic_sidebar( 'end-post') ): ?>
+      <?php endif; ?>
+
+      <br><br>
+      
       <?php comments_template(); ?>
       <?php paginate_comments_links() ?>
 

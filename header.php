@@ -20,7 +20,7 @@
        <div class="page-container">
 
       <?php if ( ! dynamic_sidebar( 'social-icons-header') ): ?>
-        <p>Set up your social icons with a widget. Go to Appearance > Widgets and use the "Social Icons Footer" widget.</p>
+        <p>Set up your social icons with a widget. Go to Appearance > Widgets and use the "Social Icons Header" widget.</p>
       <?php endif; ?>
 
         </div> 
@@ -30,8 +30,8 @@
 
 <div class="logo">
     <a href="<?php echo esc_url( home_url() ); ?>">
-      <?php if( get_theme_mod( 'zenlifefree_logo' ) != "" ): ?>
-        <img src="<?php echo get_theme_mod( 'zenlifefree_logo' ); ?>">
+      <?php if( get_theme_mod( 'zenlife_logo' ) != "" ): ?>
+        <img src="<?php echo get_theme_mod( 'zenlife_logo' ); ?>">
       <?php endif; ?>
     </a>
 </div>

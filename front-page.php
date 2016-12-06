@@ -8,8 +8,8 @@
 <div class="home-overlay">
 
   <div class="lg-homepage-photo">
-    <?php if( get_theme_mod( 'zenlifefree_lg_photo' ) != "" ): ?>
-      <img src="<?php echo get_theme_mod( 'zenlifefree_lg_photo' ); ?>">
+    <?php if( get_theme_mod( 'zenlife_lg_photo' ) != "" ): ?>
+      <img src="<?php echo get_theme_mod( 'zenlife_lg_photo' ); ?>">
     <?php endif; ?>
   </div>
 
@@ -18,7 +18,7 @@
   <div class="home-text-overlay">
 
     <div class="site-headline">
-      <h2 id="site-headline"><?php echo get_theme_mod('zenlifefree_headline_text'); ?></h2>
+      <h2 id="site-headline"><?php echo get_theme_mod('zenlife_headline_text'); ?></h2>
     </div>
 
     <div class="front-button">
@@ -73,17 +73,18 @@
         <?php the_content(); ?>
 
         <?php endwhile; else : ?>
-        <p><?php _e( 'Sorry, no posts matched your criteria.', 'zen-life-free' ); ?></p>
+        <p><?php _e( 'Sorry, no posts matched your criteria.', 'zen-life' ); ?></p>
 
         <?php endif; ?> 
 
         <!-- show latest blog posts -->
 
-            <?php
+              <?php
               $args = array( 'posts_per_page' => 1,
                               'orderby' => 'date',
                               'post__in'  => get_option( 'sticky_posts' ),
                               'ignore_sticky_posts' => 1 );
+
               $postslist = get_posts( $args );
               foreach ( $postslist as $post ) :
               setup_postdata( $post ); ?> 
@@ -96,13 +97,13 @@
 
                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-                <div class="recent-posts-details">
+                
                   <p>
                     Posted on <?php echo the_time('l, F jS, Y');?><br />
                     in <?php the_category( ', ' ); ?><br>
                     with <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
                   </p>
-                </div>
+
 
                 <?php the_excerpt(); ?><button><a href="<?php the_permalink(); ?>">Read More</a></button>
 
@@ -120,13 +121,13 @@
 
     <div class="section group">
 
-        <!-- WP LOOP for 2 smaller psots -->
+        <!-- WP LOOP for 2 smaller posts -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
         <?php the_content(); ?>
 
         <?php endwhile; else : ?>
-        <p><?php _e( 'Sorry, no posts matched your criteria.', 'zen-life-free' ); ?></p>
+        <p><?php _e( 'Sorry, no posts matched your criteria.', 'zen-life' ); ?></p>
 
         <?php endif; ?> 
 

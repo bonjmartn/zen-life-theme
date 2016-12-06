@@ -47,7 +47,7 @@ if ( ! function_exists( 'zenlife_setup' ) ) :
 	// Add Support for Flexible Title Tag
 	
 	add_theme_support( 'title-tag' );
-	
+
 	}
 endif;
 
@@ -71,7 +71,7 @@ function zenlife_woocommerce_support() {
 
 function zenlife_google_fonts() {
   $query_args = array(
-    'family' => 'Open+Sans:400,400italic,600,600italic,700,700italic',
+    'family' => 'Open+Sans:400,400italic,600,600italic,700,700italic|Roboto:400,400italic,700,700italic|Lato:400,400italic,700,700italic|Raleway:400,400italic,600,600italic,700,700italic|PT+Sans:400,400italic,700,700italic|Lora:400,400italic,700,700italic|Ubuntu:400,400italic,700,700italic|Noto+Sans:400,400italic,700,700italic|Playfair+Display:400,400italic,700,700italic|Alegreya+Sans:400,400italic,700,700italic|Muli:400italic|Cabin:400,600,400italic,600italic,700,700italic|Noto+Serif:400,400italic,700,700italic',
     'subset' => 'latin,latin-ext',
   );
   wp_enqueue_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
@@ -86,16 +86,13 @@ function zenlife_content_width() {
 }
 add_action( 'after_setup_theme', 'zenlife_content_width', 0 );
 
-// Add Support for Feed Links
-add_theme_support( 'automatic-feed-links' );
-
 // MENUS!
 
 function zenlife_register_theme_menus() {
 
 	register_nav_menus (
 		array (
-			'header-menu' => __( 'Header Menu', 'zen-life-free')
+			'header-menu' => __( 'Header Menu', 'zen-life')
 	));
 }
 
@@ -110,6 +107,9 @@ add_action ( 'init', 'zenlife_register_theme_menus');
 
 require_once get_template_directory() . '/inc/widgets.php';
 
+// Include About Box Sidebar Widget
+require_once get_template_directory() . '/inc/aboutbox-widget.php';
+
 // Include Home Feature Widget
 require_once get_template_directory() . '/inc/home-feature-widget.php';
 
@@ -122,6 +122,7 @@ require_once get_template_directory() . '/inc/ctabutton-widget.php';
 // Include Social Icons Widgets
 require_once get_template_directory() . '/inc/social-widget-footer.php';
 require_once get_template_directory() . '/inc/social-widget-header.php';
+require_once get_template_directory() . '/inc/social-widget-sidebar.php';
 
 // THEME CUSTOMIZER!
 
